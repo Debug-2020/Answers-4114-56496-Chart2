@@ -90,20 +90,15 @@
 
 package org.jfree.data.time;
 
+import org.jfree.chart.util.ObjectUtilities;
+import org.jfree.data.event.SeriesChangeEvent;
+import org.jfree.data.general.Series;
+import org.jfree.data.general.SeriesException;
+
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TimeZone;
-
-import org.jfree.chart.util.ObjectUtilities;
-import org.jfree.data.general.Series;
-import org.jfree.data.event.SeriesChangeEvent;
-import org.jfree.data.general.SeriesException;
+import java.util.*;
 
 /**
  * Represents a sequence of zero or more data items in the form (period, value)
@@ -1055,8 +1050,6 @@ public class TimeSeries extends Series implements Cloneable, Serializable {
         }
         TimeSeries copy = (TimeSeries) super.clone();
         copy.data = new java.util.ArrayList();
-        copy.minY = Double.NaN;
-        copy.maxY = Double.NaN;
         if (this.data.size() > 0) {
             for (int index = start; index <= end; index++) {
                 TimeSeriesDataItem item

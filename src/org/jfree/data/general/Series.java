@@ -55,15 +55,14 @@
 
 package org.jfree.data.general;
 
-import org.jfree.data.event.SeriesChangeListener;
+import org.jfree.chart.util.ObjectUtilities;
 import org.jfree.data.event.SeriesChangeEvent;
+import org.jfree.data.event.SeriesChangeListener;
+
+import javax.swing.event.EventListenerList;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
-
-import javax.swing.event.EventListenerList;
-
-import org.jfree.chart.util.ObjectUtilities;
 
 /**
  * Base class representing a data series.  Subclasses are left to implement the
